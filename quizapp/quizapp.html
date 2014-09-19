@@ -1,0 +1,68 @@
+<head>
+  <title>Quiz App</title>
+</head>
+
+<body>
+   	
+  {{> page }}
+  
+  <div class="footer">
+	<p>&copy; Zikva 2014</p>
+  </div>
+</body>
+
+<template name="page">
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li>{{> loginButtons align="right"}}</li>
+		  <li></li>
+		  <li class="active"><a href="#" id="home">Home</a></li>
+          <li><a href="#" id="result">Result</a></li>
+		</ul>
+        <h3 class="text-muted">The Ultimate Quiz</h3>
+		<p><i>Ready to pit your brains against the best? Jump in. Answer a series of <span class="total-q"><i>5</i></span> questions and see how you fair.</i>Sign up to save your results</p>
+     </div>
+  
+  {{ #if showResult }}
+	{{> result }}
+  {{ else }}
+	{{> question}}
+  {{ /if }}
+</template>
+
+<template name="question">
+	<div class="questions">
+		<div class="text-center">
+		  <p id="pagination">Question <span id="current-q"><i>{{ currentQuestion.number }}</i></span> of <span class="total-q"><i>{{ questionCount }}</i></span></p>
+	    </div>
+		<p class="text-muted text-left">{{ currentQuestion.question }}</p>
+		<form>
+	  <div class="radio answers">
+	  {{ #each currentQuestion.choices }}	
+		  {{> choices}}
+	  {{ /each }}	
+	  </div>
+	  <input type="hidden" id="currentQNumber" value="{{ currentQuestion.number }}">
+	  <button type="submit" id="submit" class="btn btn-primary" role="button">Next>></button>
+	</form>
+	</div>
+</template>
+
+<template name="choices">
+	
+	  	<input type="radio" name="answer" id="{{ this }}" class="radio_choice"><label for="{{ this }}">{{ this }}</label><br>
+	  
+</template>
+
+<template name="result">
+	<div class="score">
+		<p class="text-muted text-center">Excellent!<br>You finished the quiz. <br> You scored : <br>{{ showResult }} <br> Think you can do better?</p>
+		{{ #if currentUser }}
+			<p class="text-muted text-center">Click "Try Again" to save your score and give it another try</p>
+		{{ else }}
+			<p class="text-muted text-center">Sign up/Sign in to save your results and give it another try</p>
+		{{ /if}}
+		<button type="button" id="try-again" class="btn-primary btn-lg text-center" role="button">Try Again!!</button>
+	</div>
+</template>
+
