@@ -1,0 +1,12 @@
+<template name="header">
+	<div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li>{{> loginButtons align="right"}}</li>
+		  <li></li>
+		  <li class="active"><a href="{{ pathFor 'welcome' }}" id="home">Home</a></li>
+          <li><a href="{{ pathFor 'result' }}" id="result">Result</a></li>
+		</ul>
+        <h3 class="text-muted">The Ultimate Quiz</h3>
+		<p><i>Ready to pit your brains against the best? Jump in. Answer a series of questions to test your knowledge. Compare your results against others and claim the leaderboard by being the best.</i>Sign up to save your results</p>
+    </div>
+</template>

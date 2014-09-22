@@ -1,0 +1,17 @@
+<template name="question">
+	<div class="questions">
+		<div class="text-center">
+		  <p id="pagination">Question <span id="current-q"><i>{{ currentQuestion.number }}</i></span> of <span class="total-q"><i>{{ questionCount }}</i></span></p>
+	    </div>
+		<p class="text-muted text-left">{{ currentQuestion.question }}</p>
+		<form>
+	  <div class="radio answers">
+	  {{ #each currentQuestion.choices }}	
+		  {{> choices}}
+	  {{ /each }}	
+	  </div>
+	  <input type="hidden" id="currentQNumber" value="{{ currentQuestion.number }}">
+	  <button type="submit" id="submit" class="btn btn-primary" role="button">Next>></button>
+	</form>
+	</div>
+</template>
