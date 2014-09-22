@@ -8,4 +8,5 @@ accounts-password
 accounts-ui
 bootstrap
 iron:router
+iron:layout
 
