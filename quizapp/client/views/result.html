@@ -1,0 +1,11 @@
+<template name="result">
+	<div class="score">
+		<p class="text-muted text-center">Excellent!<br>You finished the quiz. <br> You scored : <br>{{ showResult }} <br> Think you can do better?</p>
+		{{ #if currentUser }}
+			<p class="text-muted text-center">Click "Try Again" to save your score and give it another try</p>
+		{{ else }}
+			<p class="text-muted text-center">Sign up/Sign in to save your results and give it another try</p>
+		{{ /if}}
+		<button type="button" id="try-again" class="btn-primary btn-lg text-center" role="button">Try Again!!</button>
+	</div>
+</template>
