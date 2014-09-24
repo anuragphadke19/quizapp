@@ -6,8 +6,7 @@
 meteor-platform
 accounts-password
 accounts-ui
-iron:router
+bootstrap
 iron:layout
-less
-nemo64:bootstrap
+iron:router
 

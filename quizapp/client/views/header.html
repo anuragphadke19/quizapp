@@ -1,10 +1,10 @@
 <template name="header">
 	<div class="header">
-        <h3><a href="{{ pathFor 'welcome' }}" class="navbar-brand">The Ultimate Quiz</a></h3>
-        <ul class="nav nav-pills pulls-right">
-          <li>{{> loginButtons align="right"}}</li>
-          <li><a href="{{ pathFor 'welcome' }}" id="home">Home</a></li>
-          <li><a href="{{ pathFor 'result' }}" id="result">Result</a></li>
-        </ul>
+      <ul class="nav nav-pills pull-right">
+        <li>{{> loginButtons align="right"}}</li>
+        <li><a href="{{ pathFor 'welcome' }}" id="home">Home</a></li>
+        <li><a href="{{ pathFor 'result' }}" id="result">Result</a></li>
+      </ul>
+      <h3>The Ultimate Quiz</h3>
 	</div>
 </template>
