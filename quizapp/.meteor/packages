@@ -6,7 +6,7 @@
 meteor-platform
 accounts-password
 accounts-ui
-bootstrap
 iron:layout
 iron:router
+mizzao:bootstrap-3
 
